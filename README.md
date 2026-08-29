@@ -1,54 +1,219 @@
-# Shabari Shetty — Portfolio
+# 👩‍💻 Shabari Shetty — Personal Portfolio
 
-A premium, interactive portfolio built with React, Vite, Tailwind CSS,
-Framer Motion and React Three Fiber (Three.js).
+### Data Analyst | Full-Stack Developer | CSE Student
 
-## Getting started
+Welcome to my personal portfolio repository.
 
-```bash
-npm install
-npm run dev       # local dev server
-npm run build     # production build -> dist/
-npm run preview   # preview the production build
-```
+This portfolio showcases my journey in **Data Analytics and Full-Stack Development**, including my technical skills, projects, certifications, resume, and practical work.
 
-## Where to edit things
+The website is designed as an interactive and modern experience featuring **3D elements, smooth animations, responsive layouts, interactive UI components, and a data-inspired visual experience**.
 
-- **Social links, email, resume URL** — `src/config/links.js` (single source of truth,
-  used everywhere in the site).
-- **Profile photo** — replace `public/profile.jpg` with your own image (same filename).
-- **Resume** — add a `resume.pdf` file to `public/` so the "Download Resume" buttons work.
-- **Projects** — `src/components/Projects.jsx` (the `PROJECTS` array).
-- **Skills** — `src/components/Skills.jsx` (the `GROUPS` array).
-- **Timeline / journey** — `src/components/Journey.jsx`.
+---
 
-## Structure
+## 🌐 Live Portfolio
 
-```
-src/
-  components/   # one component per section (Navbar, Hero, About, Skills, ...)
-  config/       # links.js — edit social/contact links here
-  index.css     # design tokens (colors, fonts) + global styles
-  App.jsx       # page assembly
-public/
-  profile.jpg   # your photo
-```
+🚀 **[Visit My Portfolio](https://shabari-shetty-portfolio-175f.vercel.app/)**
 
-## Notes
+💻 **[GitHub](https://github.com/shabari803/)**
 
-- The contact form is client-side only (validation + a friendly confirmation state).
-  To actually send messages, connect it to a service like Formspree, EmailJS, or your
-  own backend inside `src/components/Contact.jsx`'s `handleSubmit`.
-- The 3D hero scene is lazy-loaded and automatically disabled when the visitor's
-  OS has "reduce motion" turned on.
-- Built to be deployed as a static site (Vercel, Netlify, GitHub Pages, etc.) —
-  just run `npm run build` and deploy the `dist/` folder.
+🔗 **[LinkedIn](https://www.linkedin.com/in/shabari-shetty-a79312300)**
 
-## Resume & Certificates
+📧 **Email:** shabarishetty2006@gmail.com
 
-- Add your resume PDF to `public/resume.pdf`. Both the Hero's "View Resume" /
-  "Download Resume" links and the navbar's "Resume" button read from this
-  exact path — nothing else to configure.
-- Add certificate PDFs to `public/certificates/` following the naming guide
-  in that folder's own README. Edit `CERTIFICATIONS` in `src/config/links.js`
-  if you add, remove, or reorder certificates.
+---
+
+## ✨ Portfolio Highlights
+
+- 🌌 Interactive 3D hero experience
+- 🎨 Modern futuristic UI
+- 📊 Data Analytics focused presentation
+- 💻 Full-Stack Development showcase
+- 🧊 Interactive 3D elements
+- 🖱️ Mouse-based interactions
+- ✨ Smooth animations and transitions
+- 📱 Fully responsive design
+- 🏆 Interactive certifications section
+- 📄 Resume access
+- 🔗 GitHub and LinkedIn integration
+- ⚡ Performance-focused implementation
+- 🎯 Recruiter-friendly project presentation
+
+---
+
+## 📌 Featured Projects
+
+### 📊 Customer Behavior Analysis
+
+Analyzed customer purchasing patterns, demographics, spending behavior, and customer segments to identify meaningful business insights.
+
+**Technologies:**
+
+`Python` `SQL` `Power BI` `Data Analysis`
+
+---
+
+### 🪔 Python Diwali Sales Analysis
+
+Performed exploratory data analysis on Diwali sales data to identify customer purchasing patterns, product trends, and sales insights.
+
+**Technologies:**
+
+`Python` `Pandas` `Matplotlib` `Seaborn` `EDA`
+
+---
+
+### 🤖 AI Sentiment Analysis Tool
+
+Built an AI-powered sentiment analysis application for analyzing text and identifying sentiment using modern Natural Language Processing techniques.
+
+**Technologies:**
+
+`Python` `Streamlit` `NLP` `Transformers`
+
+---
+
+### 🎯 CareerQuest
+
+A web platform designed to help students prepare for company-specific interviews by organizing and presenting relevant interview preparation resources.
+
+**Technologies:**
+
+`HTML` `CSS` `JavaScript` `React.js`
+
+---
+
+## 🛠️ Tech Stack
+
+### 📊 Data Analytics
+
+- Python
+- SQL
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Power BI
+- Exploratory Data Analysis
+- Data Visualization
+
+### 💻 Programming
+
+- Java
+- Python
+- JavaScript
+
+### 🌐 Full-Stack / Web Development
+
+- HTML
+- CSS
+- JavaScript
+- React.js
+
+### 🔧 Tools
+
+- Git
+- GitHub
+- VS Code
+- Figma
+
+### ⚡ Portfolio Technologies
+
+- React
+- Vite
+- Tailwind CSS
+- Three.js / React Three Fiber
+- Framer Motion
+- Lucide React
+
+---
+
+## 🎨 Key Features
+
+### 🌌 Interactive 3D Experience
+
+The portfolio includes an interactive 3D environment designed to create an engaging first impression.
+
+Features include:
+
+- Floating 3D elements
+- Particle effects
+- Geometric objects
+- Mouse interactions
+- Smooth animations
+- Parallax effects
+
+---
+
+### 📊 Data Analytics Experience
+
+The portfolio represents the data analytics workflow:
+
+**Collect → Clean → Explore → Analyze → Visualize → Insight**
+
+This reflects my interest in transforming raw data into meaningful insights.
+
+---
+
+### 💼 Project Showcase
+
+Projects are presented through interactive cards containing:
+
+- Project descriptions
+- Technologies used
+- Project details
+- GitHub links
+- Live demo links where available
+
+---
+
+### 🏆 Certifications
+
+A dedicated certification section showcases completed certifications with:
+
+- Certification name
+- Issuing organization
+- Date
+- Description
+- Certificate access
+
+---
+
+### 📄 Resume
+
+The portfolio provides direct access to my resume through the navigation bar.
+
+---
+
+### 📱 Responsive Design
+
+The website is optimized for:
+
+- 💻 Desktop
+- 💻 Laptop
+- 📱 Tablet
+- 📱 Mobile
+
+---
+
+## 📂 Project Structure
+
+```text
+shabari-shetty-portfolio/
+│
+├── public/
+│   ├── profile.jpg
+│   ├── resume.pdf
+│   └── certificates/
+│
+├── src/
+│   ├── components/
+│   ├── config/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── ...
+│
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
