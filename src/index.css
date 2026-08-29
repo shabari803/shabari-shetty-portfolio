@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #06070c;
+  --bg-alt: #0a0d16;
+  --bg-raise: #0f1320;
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-strong: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text: #e9edf6;
+  --muted: #8b93a8;
+  --muted-2: #5c6478;
+  --blue: #4f8dfd;
+  --cyan: #22d3ee;
+  --violet: #8b5cf6;
+  --violet-soft: #a78bfa;
+
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; background: var(--bg); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--violet); color: #fff; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-2); }
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.font-mono-ui { font-family: var(--font-mono); }
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, var(--cyan) 0%, var(--blue) 45%, var(--violet-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cursor-dot, .cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--cyan);
+  box-shadow: 0 0 12px 2px rgba(34, 211, 238, 0.8);
+}
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255,255,255,0.35);
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.cursor-ring.hovered {
+  width: 54px;
+  height: 54px;
+  border-color: var(--cyan);
+  background: rgba(34, 211, 238, 0.06);
+}
+
+@media (max-width: 860px), (hover: none) {
+  .cursor-dot, .cursor-ring { display: none; }
+}
+
+.nav-link {
+  position: relative;
+  color: var(--muted);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  transition: width 0.25s ease;
+}
+.nav-link:hover, .nav-link.active { color: var(--text); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+.btn-primary {
+  background: linear-gradient(100deg, var(--cyan), var(--blue));
+  color: #05070d;
+  font-weight: 600;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.btn-primary:hover { filter: brightness(1.08); transform: translateY(-2px); }
+
+.btn-ghost {
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--cyan);
+  background: rgba(34, 211, 238, 0.06);
+  transform: translateY(-2px);
+}
+
+.card-tilt { transform-style: preserve-3d; will-change: transform; }
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  color: var(--muted);
+  background: rgba(255,255,255,0.02);
+}
