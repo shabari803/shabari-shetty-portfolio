@@ -35,6 +35,72 @@ const Donut = ({ pct = 68, color = "var(--cyan)" }) => {
   );
 };
 
+export function EduCloudVisual() {
+  return (
+    <div className="glass rounded-lg p-4">
+      {/* Dashboard header */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-[var(--cyan)]/15 flex items-center justify-center">
+            <span className="text-[var(--cyan)] font-bold">E</span>
+          </div>
+          <div>
+            <p className="text-sm font-semibold">EduCloud</p>
+            <p className="text-[10px] text-[var(--muted)]">
+              Connected on One Platform
+            </p>
+          </div>
+        </div>
+        <span className="chip">Dashboard</span>
+      </div>
+
+      {/* Feature cards */}
+      <div className="grid grid-cols-3 gap-2 mb-3">
+        {[
+          { label: "Attendance", icon: "✓" },
+          { label: "Academics", icon: "▤" },
+          { label: "Notices", icon: "♧" },
+        ].map((item) => (
+          <div
+            key={item.label}
+            className="border border-[var(--border)] rounded-lg p-3 text-center"
+          >
+            <div className="text-lg text-[var(--cyan)] mb-1">
+              {item.icon}
+            </div>
+            <p className="text-[10px] text-[var(--muted)]">
+              {item.label}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* Academic activity visualization */}
+      <div className="border border-[var(--border)] rounded-lg p-3">
+        <p className="text-xs font-mono-ui text-[var(--muted)] mb-3">
+          Academic overview
+        </p>
+        <div className="flex items-end gap-2 h-12">
+          {[35, 65, 45, 85, 60, 95, 72].map((height, i) => (
+            <motion.div
+              key={i}
+              initial={{ height: 0 }}
+              whileInView={{ height: `${height}%` }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.06 }}
+              className="flex-1 rounded-t-sm"
+              style={{
+                background:
+                  "linear-gradient(180deg, var(--cyan), var(--blue))",
+              }}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function DashboardVisual() {
   return (
     <div className="grid grid-cols-3 gap-3 items-end">

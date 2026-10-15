@@ -8,12 +8,39 @@ import {
   SalesVisual,
   SentimentVisual,
   CareerQuestVisual,
+  EduCloudVisual,
 } from "./ProjectVisual";
 import { PROJECT_LINKS } from "../config/links";
 
 const FILTERS = ["All", "Data Analytics", "AI / ML", "Full-Stack"];
 
 const PROJECTS = [
+  
+  {
+    id: "educloud",
+    title: "EduCloud — Connected on One Platform",
+    category: "Full-Stack",
+    description:
+      "An integrated educational management platform that brings academic information and student services together in one place.",
+    tech: ["React.js", "Java Spring Boot", "MySQL", "JWT"],
+    visual: EduCloudVisual,
+    problem:
+      "Educational information and student services can be scattered across different systems, making it difficult to manage academic activities efficiently.",
+    solution:
+      "Developed an educational management platform with a React frontend and a Java Spring Boot backend, supported by MySQL and JWT-based authentication.",
+    features: [
+      "Centralized academic information and student services",
+      "Role-based access and authentication",
+      "Educational dashboards and management features",
+    ],
+    learned:
+      "How to structure a full-stack application using React, Java Spring Boot, MySQL, and authentication.",
+    links: {
+      github: "https://github.com/shabari803",
+      demo: "https://educloud-jade.vercel.app/",
+    },
+  },
+
   {
     id: "customer-behavior",
     title: "Customer Behavior Analysis",
@@ -131,25 +158,42 @@ function TiltCard({ project, onOpen }) {
         ))}
       </div>
 
-      <div className="flex items-center justify-between">
-        <button
-          onClick={() => onOpen(project)}
-          className="cursor-hover text-sm font-mono-ui text-[var(--cyan)] flex items-center gap-1 group/link"
-        >
-          Details
-          <ArrowUpRight size={14} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-        </button>
-        <a
-          href={project.links.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="cursor-hover text-[var(--muted)] hover:text-[var(--text)] transition-colors"
-          aria-label={`${project.title} on GitHub`}
-        >
-          <GithubIcon size={18} />
-        </a>
-      </div>
+      
+<div className="flex items-center justify-between gap-3">
+  <button
+    onClick={() => onOpen(project)}
+    className="cursor-hover text-sm font-mono-ui text-[var(--cyan)] flex items-center gap-1"
+  >
+    Details
+    <ArrowUpRight size={14} />
+  </button>
+
+  <div className="flex items-center gap-3">
+    {project.links.demo && (
+      <a
+        href={project.links.demo}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => e.stopPropagation()}
+        className="cursor-hover text-xs font-mono-ui text-[var(--cyan)] hover:underline"
+      >
+        Live Demo ↗
+      </a>
+    )}
+
+    <a
+      href={project.links.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={(e) => e.stopPropagation()}
+      className="cursor-hover text-[var(--muted)] hover:text-[var(--text)] transition-colors"
+      aria-label={`${project.title} on GitHub`}
+    >
+      <GithubIcon size={18} />
+    </a>
+  </div>
+</div>
+
     </motion.article>
   );
 }
